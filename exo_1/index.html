@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <title>Exercice</title>
+  </head>
+  <body>
+    <form action=".traitement.php">
+      <label for="name">name</label>
+      <input type="text" name="name" id="name" />
+
+      <label for="phone">phone</label>
+      <input type="text" name="phone" id="phone" />
+
+      <label for="email">email</label>
+      <input type="text" name="email" id="email" />
+
+      <label for="address">adresse</label>
+      <input type="text" name="address" id="address" />
+
+      <input type="submit" value="Envoyer" />
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Phone</td>
+          <td>Email</td>
+          <td>Adresse</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
