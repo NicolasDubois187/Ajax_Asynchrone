@@ -1,3 +1,4 @@
+// console.log("coucou");
 const form = document.querySelector("form");
 const tbody = document.querySelector("tbody");
 

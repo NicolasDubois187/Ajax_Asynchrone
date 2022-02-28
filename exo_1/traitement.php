@@ -2,7 +2,7 @@
 require './helpers.php';
 $db = 'mysql:host=127.0.0.1;dbname=async_await';
 $db_user = "root";
-$db_pwd = "root";
+$db_pwd = "";
 
 if (!empty($_POST)) {
 
@@ -29,7 +29,7 @@ if (!empty($_POST)) {
 
       try {
         //Préparation de la requète
-        $req = $DBconnect->prepare('INSERT INTO myTable(name, phone, email, address) VALUES(:name, :phone, :email, :address)');
+        $req = $DBconnect->prepare('INSERT INTO user(name, phone, email, address) VALUES(:name, :phone, :email, :address)');
 
         //Éxécution de la requête 
         $req->execute($data);
@@ -49,7 +49,7 @@ if (!empty($_POST)) {
       $email = validate($_POST['email']);
 
       try {
-        $sql = "DELETE FROM myTable WHERE email = '$email'";
+        $sql = "DELETE FROM user WHERE email = '$email'";
         $req = $DBconnect->prepare($sql);
         $req->execute();
 
@@ -76,7 +76,7 @@ if (!empty($_POST)) {
     // $DBconnect->exec("SET NAMES utf8");
     $DBconnect->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $req = "SELECT name, phone, email, address FROM myTable";
+    $req = "SELECT name, phone, email, address FROM user";
     $data = $DBconnect->query($req)->fetchAll(PDO::FETCH_ASSOC);
 
     echo json_encode($data);
