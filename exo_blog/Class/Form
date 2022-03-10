@@ -1,0 +1,30 @@
+<?php
+
+abstract class Form {
+    private $email;
+    private $password;
+    public $secure;
+    public $isEmail;
+
+
+    public function __construct (string $email, string $password)
+    {
+        $this->email = $email;
+        $this->password = $password;
+
+        self::$secure;
+        self::$isEmail;
+    }
+    public static function secure($donnees)
+    {
+      $donnees = trim($donnees);
+      $donnees = stripslashes($donnees);
+      $donnees = htmlspecialchars($donnees);
+      return $donnees;
+    }
+    public static function isEmail() {
+        return self::$isEmail;
+    }
+
+   
+}
